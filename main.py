@@ -31,6 +31,7 @@ class CreateAccountWindow(Screen):
         else:
             invalidForm()
 
+
     def login(self):
         self.reset()
         sm.current = "login"
