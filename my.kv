@@ -12,46 +12,46 @@
             size: root.width, root.height/2
 
             Label:
-                text: "Create an Account"
-                size_hint: 0.8, 0.2
+                text: "创建一个账户"
+                size_hint: 0.4, 0.1
                 pos_hint: {"x":0.1, "top":1}
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             Label:
-                size_hint: 0.5,0.12
+                size_hint: 0.25,0.06
                 pos_hint: {"x":0, "top":0.8}
                 text: "Name: "
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             TextInput:
                 pos_hint: {"x":0.5, "top":0.8}
-                size_hint: 0.4, 0.12
+                size_hint: 0.2, 0.06
                 id: namee
                 multiline: False
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             Label:
-                size_hint: 0.5,0.12
+                size_hint: 0.25,0.06
                 pos_hint: {"x":0, "top":0.8-0.13}
                 text: "Email: "
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             TextInput:
                 pos_hint: {"x":0.5, "top":0.8-0.13}
-                size_hint: 0.4, 0.12
+                size_hint: 0.2, 0.06
                 id: email
                 multiline: False
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             Label:
-                size_hint: 0.5,0.12
+                size_hint: 0.25,0.06
                 pos_hint: {"x":0, "top":0.8-0.13*2}
                 text: "Password: "
                 font_size: (root.width**2 + root.height**2) / 14**4
 
             TextInput:
                 pos_hint: {"x":0.5, "top":0.8-0.13*2}
-                size_hint: 0.4, 0.12
+                size_hint: 0.2, 0.06
                 id: passw
                 multiline: False
                 password: True
@@ -59,9 +59,9 @@
 
         Button:
             pos_hint:{"x":0.3,"y":0.25}
-            size_hint: 0.4, 0.1
+            size_hint: 0.2, 0.05
             font_size: (root.width**2 + root.height**2) / 17**4
-            text: "Already have an Account? Log In"
+            text: "已经有账户了？这里登入！"
             on_release:
                 root.manager.transition.direction = "left"
                 root.login()
@@ -69,7 +69,7 @@
         Button:
             pos_hint:{"x":0.2,"y":0.05}
             size_hint: 0.6, 0.15
-            text: "Submit"
+            text: "提交"
             font_size: (root.width**2 + root.height**2) / 14**4
             on_release:
                 root.manager.transition.direction = "left"
@@ -85,10 +85,10 @@
     FloatLayout:
 
         Label:
-            text:"Email: "
+            text:"邮箱: "
             font_size: (root.width**2 + root.height**2) / 13**4
             pos_hint: {"x":0.1, "top":0.9}
-            size_hint: 0.35, 0.15
+            size_hint: 0.18, 0.08
 
         TextInput:
             id: email
@@ -98,10 +98,10 @@
             size_hint: 0.4, 0.15
 
         Label:
-            text:"Password: "
+            text:"密码: "
             font_size: (root.width**2 + root.height**2) / 13**4
             pos_hint: {"x":0.1, "top":0.7}
-            size_hint: 0.35, 0.15
+            size_hint: 0.17, 0.08
 
         TextInput:
             id: password
@@ -115,16 +115,16 @@
             pos_hint:{"x":0.2,"y":0.05}
             size_hint: 0.6, 0.2
             font_size: (root.width**2 + root.height**2) / 13**4
-            text: "Login"
+            text: "登录"
             on_release:
                 root.manager.transition.direction = "up"
                 root.loginBtn()
 
         Button:
             pos_hint:{"x":0.3,"y":0.3}
-            size_hint: 0.4, 0.1
+            size_hint: 0.2, 0.1
             font_size: (root.width**2 + root.height**2) / 17**4
-            text: "Don't have an Account? Create One"
+            text: "没有账户？创建一个"
             on_release:
                 root.manager.transition.direction = "right"
                 root.createBtn()
@@ -139,25 +139,25 @@
         Label:
             id: n
             pos_hint:{"x": 0.1, "top":0.9}
-            size_hint:0.8, 0.2
-            text: "Account Name: "
+            size_hint:0.4, 0.1
+            text: "账户ID: "
 
         Label:
             id: email
-            pos_hint:{"x": 0.1, "top":0.7}
-            size_hint:0.8, 0.2
-            text: "Email: "
+            pos_hint:{"x": 0.1, "top":0.8}
+            size_hint:0.4, 0.1
+            text: "邮箱: "
 
         Label:
             id: created
-            pos_hint:{"x": 0.1, "top":0.5}
-            size_hint:0.8, 0.2
-            text: "Created: "
+            pos_hint:{"x": 0.1, "top":0.7}
+            size_hint:0.4, 0.1
+            text: "创建日期: "
 
         Button:
             pos_hint:{"x":0.2, "y": 0.1}
-            size_hint:0.6,0.2
-            text: "Log Out"
+            size_hint:0.3,0.1
+            text: "登出"
             on_release:
                 app.root.current = "login"
                 root.manager.transition.direction = "down"

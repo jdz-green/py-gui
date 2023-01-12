@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -5,7 +6,12 @@ from kivy.properties import ObjectProperty
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from database import DataBase
+from kivy.resources import resource_add_path, resource_find
+import os
+resource_add_path(os.path.abspath('../res/fonts/'))
+from kivy.core.text import LabelBase
 
+LabelBase.register('Roboto', 'PingFangSC-Thin.otf')
 
 class CreateAccountWindow(Screen):
     namee = ObjectProperty(None)
@@ -67,9 +73,9 @@ class MainWindow(Screen):
 
     def on_enter(self, *args):
         password, name, created = db.get_user(self.current)
-        self.n.text = "Account Name: " + name
-        self.email.text = "Email: " + self.current
-        self.created.text = "Created On: " + created
+        self.n.text = "账户ID: " + name
+        self.email.text = "邮箱: " + self.current
+        self.created.text = "创建日期: " + created
 
 
 class WindowManager(ScreenManager):
@@ -77,16 +83,16 @@ class WindowManager(ScreenManager):
 
 
 def invalidLogin():
-    pop = Popup(title='Invalid Login',
-                  content=Label(text='Invalid username or password.'),
+    pop = Popup(title='登录失败',
+                  content=Label(text='账户ID或密码错误'),
                   size_hint=(None, None), size=(400, 400))
     pop.open()
 
 
 def invalidForm():
-    pop = Popup(title='Invalid Form',
-                  content=Label(text='Please fill in all inputs with valid information.'),
-                  size_hint=(None, None), size=(400, 400))
+    pop = Popup(title='表单错误',
+                  content=Label(text='请填写所有空格'),
+                  size_hint=(None, None), size=(200, 200))
 
     pop.open()
 

@@ -30,7 +30,7 @@ class DataBase:
             self.save()
             return 1
         else:
-            print("Email exists already")
+            print("邮箱已注册！")
             return -1
 
     def validate(self, email, password):
